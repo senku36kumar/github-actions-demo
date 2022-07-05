@@ -1,0 +1,21 @@
+# this is a sample YAML which will be successful in creating a snowflake-access.v1 resource
+kind: snowflake-access.v1
+metadata:
+  name: data-access-good
+  namespace: data-access
+spec:
+  snowflakeInput:
+    email: KEVIN_WELLS@OPTUM.COM #the email must be valid Snowflake user ID
+    environment: DEV
+    permissionSchema: READ
+    prefix: TDP
+    requestType: GRANT
+    snowflakeDBList:
+      - database: DWS_DEV_V3_TESTING_OPERATIONS_DB
+        schema: DATA_FORGE_SC
+        table: DATA_FORGE_ACCESS_REQUESTS_TB
+      - database: DWS_DEV_V3_TESTING_OPERATIONS_DB
+        schema: DATA_FORGE_SC
+        table: DATA_FORGE_SUBSCRIPTIONS_TB
+    subscriptionName: allgood
+
